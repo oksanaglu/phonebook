@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Item, Text, Button } from './ContactItem.styled';
 import { RotatingLines } from 'react-loader-spinner';
-import { useDeleteContactMutation } from 'redux/contactsSliceApi';
+import { useDeleteContactMutation } from 'redux/contacts/contactsSliceApi';
 
 const ContactItem = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();

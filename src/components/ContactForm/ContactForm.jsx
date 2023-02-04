@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 import { toast } from 'react-toastify';
-import { useFetchContactsQuery, useCreateContactMutation } from 'redux/contactsSliceApi';
+import { useFetchContactsQuery, useCreateContactMutation } from 'redux/contacts/contactsSliceApi';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');

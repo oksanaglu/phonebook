@@ -1,9 +1,8 @@
-import { Label } from "@mui/icons-material";
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { authOperations, authSelectors } from "redux/auth";
-import { Form, Error } from "./LoginPage.styled";
+import { Form, Error, Label, LoginTitle } from "./LoginPage.styled";
 
 
 export const LoginPage = () => {
@@ -32,16 +31,35 @@ export const LoginPage = () => {
 
     return (
         <>
-            <h2>Enter your Phonebook</h2>
+            <LoginTitle>Please enter your email and password:</LoginTitle>
             <Form onSubmit={handleSubmit} autoComplete="off">
                 <Label>
                     <TextField
+                        id="outlined-basic"
+                        variant="outlined"
+                        size="small"
+                        label="Email"
+                        type="email"
+                        name="email"
+                        value={email}
                         onChange={handleChange}
+                        placeholder="Enter your email"
+                        required
+                        
                     />
                 </Label>
                 <Label>
                     <TextField
-                        onChange={handleChange}          
+                        id="outlined-basic"
+                        variant="outlined"
+                        size="small"
+                        label="Password"
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                        placeholder="Enter your password"
+                        required
                     />
                 </Label>
                 <Button variant="contained" type="submit">Sign in</Button>
@@ -53,3 +71,4 @@ export const LoginPage = () => {
 };
 
 export default LoginPage;
+

@@ -2,8 +2,8 @@ import ContactItem from 'components/ContactItem';
 import Loader from 'components/Loader';
 import { List, Error } from './ContactList.styled';
 import { useSelector } from 'react-redux';
-import { useFetchContactsQuery } from 'redux/contactsSliceApi';
-import { getFilter } from 'redux/selectors';
+import { useFetchContactsQuery } from 'redux/contacts/contactsSliceApi';
+import { getFilter } from 'redux/contacts/selectors';
 
 
 const ContactList = () => {

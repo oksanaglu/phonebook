@@ -1,7 +1,4 @@
-// import ContactForm from './ContactForm';
-// import ContactList from './ContactList';
-// import Filter from './Filter';
-// import { Container } from './App.styled';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +15,7 @@ import Container from '@mui/material/Container';
 
 const Home = lazy(() => import('../pages/HomePage'));
 const Register = lazy(() => import('../pages/RegisterPage'));
-const Login = lazy(() => import('../pages/HomePage'));
+const Login = lazy(() => import('../pages/LoginPage'));
 const Contacts = lazy(() => import('../pages/ContactsPage'));
 
 export const App = () => {
@@ -34,8 +31,8 @@ export const App = () => {
 
     !isFetchingCurrentUser && (
 
-      <Container>
-        <Box>
+      <Container maxWidth="sm">
+        <Box sx={{ backgroundImage: '#cfe8fc', height: '100vh' }}>
           <Header />
           <Suspense fallback={<Loader />}>
             <Routes>
@@ -60,11 +57,12 @@ export const App = () => {
               <Route path='*' element={<Navigate to='/' />} />
             </Routes>
             </Suspense>
-          <ToastContainer autoClose={2500} />
+          <ToastContainer />
           </Box>
       </Container>
     )
   );
+
 };
 
 
