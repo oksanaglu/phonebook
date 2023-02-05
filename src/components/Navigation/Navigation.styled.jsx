@@ -8,9 +8,12 @@ export const Link = styled(NavLink)`
   justify-content: space-between;
   font-weight: 700;
   color: white;
-  
+     text-shadow: 2px 2px 4px #000000;
   &.active {
     color: blue;
+    text-shadow: 1px 1px 1px white;
+  
+ 
   }
 
 `;

@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+
+export const RegisterContainer = styled.div`
+ border: 3px solid  #ffffff;
+ background-color: white;
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;

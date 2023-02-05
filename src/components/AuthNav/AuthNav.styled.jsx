@@ -8,11 +8,15 @@ export const Link = styled(NavLink)`
   color: white;
   transition: all 0.5s ease;
   
-  &.active {
-    color: blue;
-  }
-
   &:not(:last-child){
    margin-right: 12px;
+  }
+
+  text-shadow: 2px 2px 4px #000000;
+  &.active {
+    color: blue;
+    text-shadow: 1px 1px 1px white;
+  
+ 
   }
 `;

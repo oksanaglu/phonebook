@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Form, Label, Input, Button } from './ContactForm.styled';
+import { Form, Label, Button, Title } from './ContactForm.styled';
 import { toast } from 'react-toastify';
 import { useFetchContactsQuery, useCreateContactMutation } from 'redux/contacts/contactsSliceApi';
+import TextField from '@mui/material/TextField';
+// import Button from '@mui/material/Button';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const { data: contacts } = useFetchContactsQuery();
   const [createContact] = useCreateContactMutation();
@@ -13,7 +15,7 @@ export const ContactForm = () => {
   const handleChange = evt => {
     const { value } = evt.currentTarget;
 
-    evt.currentTarget.name === 'name' ? setName(value) : setPhone(value);
+    evt.currentTarget.name === 'name' ? setName(value) : setNumber(value);
   };
 
   const addContact = data => {
@@ -33,7 +35,7 @@ export const ContactForm = () => {
     evt.preventDefault();
     const contact = {
       name,
-      phone,
+      number,
     };
 
     addContact(contact);
@@ -42,17 +44,21 @@ export const ContactForm = () => {
   // очистка инпутов
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
     <Form onSubmit={handleSubmit}>
+      <Title>My Phonebook</Title>
       <Label>
-        Name
-        <Input
+        
+        <TextField
+         id="outlined-basic"
+          variant="outlined"
+          size="small"
           type="text"
           name="name"
-          placeholder="Enter name"
+          label="Enter name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           value={name}
@@ -61,21 +67,25 @@ export const ContactForm = () => {
         />
       </Label>
       <Label>
-        Phone
-        <Input
+       
+        <TextField
+           id="outlined-basic"
+          variant="outlined"
+          size="small"
           type="tel"
-          name="phone"
-          placeholder="Phone number"
+          name="number"
+          label="Phone number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          value={phone}
+          value={number}
           onChange={handleChange}
           required
         />
       </Label>
-      <Button type="submit">Add contact</Button>
+      <Button type="submit" >Add contact</Button>
     </Form>
   );
 };
 
 export default ContactForm;
+

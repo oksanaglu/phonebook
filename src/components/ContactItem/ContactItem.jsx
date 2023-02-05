@@ -16,7 +16,7 @@ const ContactItem = ({ id, name, number }) => {
         onClick={() => deleteContact(id)}
         disabled={isDeleting}
       >
-        {isDeleting && <RotatingLines width="10" />} Delete
+        {isDeleting && <RotatingLines width="10" strokeColor="blue" />} Delete
       </Button>
     </Item>
   );
@@ -29,3 +29,5 @@ ContactItem.propTypes = {
 };
 
 export default ContactItem;
+
+

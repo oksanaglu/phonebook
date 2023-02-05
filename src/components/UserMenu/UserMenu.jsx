@@ -45,9 +45,10 @@ export const UserMenu = () => {
             >
                 <MenuItem>Profile</MenuItem>
                 <MenuItem onClick={() => dispatch(authOperations.logOut())}>Exit</MenuItem>
-            </Menu>         
+            </Menu>
         </>
     );
 };
 
 export default UserMenu;
+

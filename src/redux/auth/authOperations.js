@@ -74,3 +74,5 @@ const fetchCurrentUser = createAsyncThunk(
 
 const operations = { register, logIn, logOut, fetchCurrentUser };
 export default operations;
+
+

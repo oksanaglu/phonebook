@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
+
+export const LoginContainer = styled.div`
+ border: 3px solid  #ffffff;
+ background-color: white;
+`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: 25px;
+ 
 `;
 
 export const Label = styled.label`

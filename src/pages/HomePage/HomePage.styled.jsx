@@ -15,12 +15,14 @@ export const Title = styled.h1`
   font-weight: bold;
   color:  #ffffff;
   padding-top: 20px;
+
 `;
 
 
 export const Title2 = styled.p`
     display: block;
     color:  #ffffff;
+   
 `;
 
 export const Button = styled.button`
@@ -39,7 +41,11 @@ export const Button = styled.button`
   &:hover {
     border: 3px solid  blue;
      color: blue;
+    
   }
+
+  
+
 `;
 
 

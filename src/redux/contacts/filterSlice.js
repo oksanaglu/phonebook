@@ -17,3 +17,4 @@ export const contactsSlise = createSlice({
 export const ReducerFilter = contactsSlise.reducer;
 
 export const { filter } = contactsSlise.actions;
+

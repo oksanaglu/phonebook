@@ -17,10 +17,8 @@ const Filter = () => {
     <Label>
       <TextField
         variant="standard"
-        Label="Find contacts by name"
+        label="Find contacts by name"
         size="small"
-        type="text"
-        placeholder="Find contacts by name"
         value={filterName}
         onChange={handleInput}
       />

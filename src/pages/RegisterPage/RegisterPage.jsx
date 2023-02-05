@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { authOperations, authSelectors } from "redux/auth";
-import { Form, Error, Label, RegisterTitle } from "./RegisterPage.styled";
+import { Form, Error, Label, RegisterTitle, RegisterContainer } from "./RegisterPage.styled";
 
 
 export const RegisterPage = () => {
@@ -35,7 +35,7 @@ export const RegisterPage = () => {
     };
 
     return (
-        <>
+        <RegisterContainer>
             <RegisterTitle>Registration</RegisterTitle>
             <Form onSubmit={handleSubmit} autoComplete="off">
                 <Label>
@@ -85,7 +85,7 @@ export const RegisterPage = () => {
                 <Button variant="contained" type="submit">To register</Button>
                 {error && <Error>{error}</Error>}
             </Form>
-        </>
+        </RegisterContainer>
     );
 };
 

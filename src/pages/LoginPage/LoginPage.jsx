@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { authOperations, authSelectors } from "redux/auth";
-import { Form, Error, Label, LoginTitle } from "./LoginPage.styled";
+import { Form, Error, Label, LoginTitle, LoginContainer } from "./LoginPage.styled";
 
 
 export const LoginPage = () => {
@@ -30,7 +30,7 @@ export const LoginPage = () => {
     };
 
     return (
-        <>
+        <LoginContainer>
             <LoginTitle>Please enter your email and password:</LoginTitle>
             <Form onSubmit={handleSubmit} autoComplete="off">
                 <Label>
@@ -65,7 +65,7 @@ export const LoginPage = () => {
                 <Button variant="contained" type="submit">Sign in</Button>
             </Form>
             {error && <Error>{error}</Error>}
-        </>
+        </LoginContainer>
     );
 
 };

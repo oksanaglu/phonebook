@@ -26,8 +26,8 @@ const ContactList = () => {
   return (
     <List>
       {renderContacts &&
-        contactList.map(({ id, name, phone }) => (
-          <ContactItem id={id} key={id} name={name} number={phone} />
+        contactList.map(({ id, name, number }) => (
+          <ContactItem id={id} key={id} name={name} number={number} />
         ))}
       {isLoading && <Loader />}
       {error && (
@@ -38,3 +38,4 @@ const ContactList = () => {
 };
 
 export default ContactList;
+
