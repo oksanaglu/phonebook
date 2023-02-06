@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { authSelectors } from "redux/auth";
 import { Container, Error } from "./ContactsPage.styled";
 
-
 export const ContactsPage = () => {
     const error = useSelector(authSelectors.getUserError);
     return (

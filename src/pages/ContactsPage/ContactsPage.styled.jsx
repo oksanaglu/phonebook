@@ -8,9 +8,8 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  // padding-top: 50px;
-   border: 3px solid  #ffffff;
- background-color: white;
+  border: 3px solid  #ffffff;
+  background-color: white;
 `;
 
 export const Error = styled.p`

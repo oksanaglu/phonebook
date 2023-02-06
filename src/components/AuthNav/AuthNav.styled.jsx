@@ -12,11 +12,8 @@ export const Link = styled(NavLink)`
    margin-right: 12px;
   }
 
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px blue;
   &.active {
-    color: blue;
-    text-shadow: 1px 1px 1px white;
-  
- 
+    color:  #5ac8fa;
   }
 `;
