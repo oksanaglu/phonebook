@@ -40,10 +40,13 @@ export const Button = styled.button`
   padding: 12;
   font-weight: 900;
   text-shadow: 2px 2px 4px blue;
+ 
 
   &:hover {
     border: 3px solid  blue;
      color: blue;
+     text-shadow: 2px 2px 4px #5ac8fa;
+     
   }
 `;
 
@@ -77,3 +80,4 @@ export const Contacts = styled.span`
 };
 
 `;
+

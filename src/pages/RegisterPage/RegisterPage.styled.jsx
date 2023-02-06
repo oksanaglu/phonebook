@@ -39,5 +39,6 @@ export const RegisterTitle = styled.h2`
   font-size: 26px;
   font-weight: bold;
   color:  blue;
+  text-shadow: 2px 2px 4px #5ac8fa;
   
 `
