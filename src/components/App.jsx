@@ -34,30 +34,49 @@ export const App = () => {
         <Box sx={{ backgroundImage: '#cfe8fc', height: '100vh' }}>
           <Header />
           <Suspense fallback={<Loader />}>
+
             <Routes>
+
               <Route exact path="/"
                 element={<PublicRoute><Home /></PublicRoute>}
               />
-              <Route path="/register"
+
+              {/* <Route path="/Register"
                 element={
-                <PublicRoute restricted redirectTo='/Login'><Register/></PublicRoute>
-              }
+                  <PublicRoute restricted redirectTo='/Login'><Register /></PublicRoute>
+                }
+              /> */}
+
+                <Route path="/Register"
+                element={
+                  <PublicRoute restricted><Register /></PublicRoute>
+                }
               />
+
+              {/* <Route path='/Login'
+                element={
+                  <PublicRoute restricted redirectTo='/Contacts'><Login /></PublicRoute>
+                }
+              /> */}
+
               <Route path='/Login'
                 element={
-                <PublicRoute restricted redirectTo='/Contacts'><Login/></PublicRoute>
-              }
+                  <PublicRoute restricted ><Login /></PublicRoute>
+                }
               />
-                 <Route path='/Contacts'
+
+              <Route path='/Contacts'
                 element={
-                <PrivateRoute redirectTo='/Login'><Contacts/></PrivateRoute>
-              }
+                  <PrivateRoute redirectTo='/Login'><Contacts /></PrivateRoute>
+                }
               />
+
               <Route path='*' element={<Navigate to='/' />} />
+
             </Routes>
-            </Suspense>
+          </Suspense>
           <ToastContainer />
-          </Box>
+        </Box>
       </Container>
     )
   );

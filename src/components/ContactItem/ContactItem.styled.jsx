@@ -30,7 +30,7 @@ export const Button = styled.button`
 
   &:hover {
     border: 1px solid blue;
-    background-color: #5ac8fa;
+    background-color: #007aff;
     color: blue;
   }
 

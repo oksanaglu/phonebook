@@ -23,7 +23,9 @@ export const HomePage = () => {
                 <Title3>
                     Hello, <TitleName>{name}!</TitleName>
                     <Link to="/contacts" >
-                        <Contacts>Open your contacts</Contacts>
+                        <Button>
+                            <Contacts>Open your contacts</Contacts>
+                            </Button>
                     </Link>
                 </Title3>
             ) : (

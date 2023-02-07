@@ -1,11 +1,14 @@
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { authOperations } from 'redux/auth';
+import { authOperations, authSelectors } from 'redux/auth';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
+import { useSelector } from "react-redux";
+import { TitleName, UserContainer } from "./UserMenu.styled"
 
 export const UserMenu = () => {
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+    const name = useSelector(authSelectors.getUserName);
     const [anchorEl, setAnchorEl] = useState(null);
     const dispatch = useDispatch();
     const handleMenu = event => {
@@ -17,7 +20,10 @@ export const UserMenu = () => {
     };
 
     return (
-        <>
+        <UserContainer>
+            {isLoggedIn && (
+                <TitleName>{name}</TitleName>
+            )}
             <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -46,7 +52,7 @@ export const UserMenu = () => {
                 <MenuItem>Profile</MenuItem>
                 <MenuItem onClick={() => dispatch(authOperations.logOut())}>Exit</MenuItem>
             </Menu>
-        </>
+        </UserContainer>
     );
 };
 

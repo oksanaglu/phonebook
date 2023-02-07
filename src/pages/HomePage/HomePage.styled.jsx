@@ -40,7 +40,6 @@ export const Button = styled.button`
   padding: 12;
   font-weight: 900;
   text-shadow: 2px 2px 4px blue;
- 
 
   &:hover {
     border: 3px solid  blue;
@@ -52,9 +51,10 @@ export const Button = styled.button`
 
 
 export const Title3 = styled.h3`
-  font-size: 20px;
+  font-size: 26px;
   color: white;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 4px blue;
     
 `;
 
@@ -63,21 +63,22 @@ export const TitleName = styled.span`
     
 `;
 export const Contacts = styled.span`
-  width: 150px;
-  padding: 3px 10px;
-  border-radius: 40px;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  color: blue;
-  margin: 10px;
 
-  &:hover,
-  &:focus {
-     text-decoration: underline;
-     color: white;
-};
+//   width: 150px;
+//   padding: 3px 10px;
+//   border-radius: 40px;
+//   font-size: 20px;
+//   font-family: Arial, Helvetica, sans-serif;
+//   font-weight: 600;
+//   text-decoration: none;
+//   color: blue;
+//   margin: 10px;
+
+//   &:hover,
+//   &:focus {
+//      text-decoration: underline;
+//      color: white;
+// };
 
 `;
 
