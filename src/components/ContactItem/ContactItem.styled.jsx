@@ -10,6 +10,7 @@ export const Item = styled.li`
 export const Text = styled.p`
  margin: 10px 0;
  color: blue;
+ font-size: 20px;
 
 `
 
@@ -28,9 +29,11 @@ export const Button = styled.button`
   color: #1d628b;
 
   &:hover {
+    border: 1px solid blue;
+    background-color: #5ac8fa;
     color: blue;
-     border: 1px solid blue;
-      background-color: #1d628b; 
   }
+
 `;
+
 
