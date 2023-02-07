@@ -4,9 +4,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
+  // Утилита для добавления JWT
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
+  // Утилита для удаления JWT
   unset() {
     axios.defaults.headers.common.Authorization = '';
   },
@@ -32,6 +34,7 @@ const logIn = createAsyncThunk(
   async (credential, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/login', credential);
+      // После успешного входа добавьте токен в заголовок HTTP.
       token.set(data.token);
       return data;
     } catch (error) {
@@ -44,25 +47,31 @@ const logIn = createAsyncThunk(
 const logOut = createAsyncThunk('auth/logout', async () => {
   try {
     await axios.post('/users/logout');
+    // После успешного выхода удалите токен из HTTP-заголовка.
     token.unset();
   } catch (error) {
     console.log('logOut :', error.message);
   }
 });
 
+// проверка залогинен ли пользователь
+
 const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
+    // Чтение токена из состояния через getState()
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
 
     if (persistedToken === null) {
+      // Если токена нет, выйти без выполнения запроса
       return thunkAPI.rejectWithValue();
     }
 
     token.set(persistedToken);
     try {
+      // Если есть токен, добавляет его в HTTP-заголовок и выполняет запрос
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
