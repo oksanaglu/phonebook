@@ -1,4 +1,4 @@
-import { Home, Title, Title2, Title3, TitleName, Button, Contacts } from "./HomePage.styled";
+import { Home, Title, Title2, Title3, TitleName, Button, Contacts, ButtonCont } from "./HomePage.styled";
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { authSelectors } from "redux/auth";
@@ -14,6 +14,7 @@ export const HomePage = () => {
             <RiContactsBook2Line size={250} color='#ffffff' />
           
             {!isLoggedIn && (
+                
                 <Title2>
                     Please register or login to start using the application:
                 </Title2>
@@ -22,12 +23,15 @@ export const HomePage = () => {
             {isLoggedIn ? (
                 <Title3>
                     Hello, <TitleName>{name}!</TitleName>
+           
                     <Link to="/contacts" >
-                        <Button>
+                        <ButtonCont>
                             <Contacts>Open your contacts</Contacts>
-                            </Button>
+                        </ButtonCont>
+                            
                     </Link>
                 </Title3>
+                
             ) : (
                 <>
                     <Link to="/register">
@@ -43,6 +47,7 @@ export const HomePage = () => {
                     </Link>
                 </>
             )}
+            
         </Home>
     );
 };

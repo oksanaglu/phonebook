@@ -16,6 +16,7 @@ export const Title = styled.h1`
   color:  #ffffff;
   padding-top: 20px;
   text-shadow: 2px 2px 4px blue;
+  margin: 0;
 
 `;
 
@@ -53,8 +54,11 @@ export const Button = styled.button`
 export const Title3 = styled.h3`
   font-size: 26px;
   color: white;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   text-shadow: 2px 2px 4px blue;
+  padding-top: 15px;
+  margin-bottom: 0;
+
     
 `;
 
@@ -64,21 +68,51 @@ export const TitleName = styled.span`
 `;
 export const Contacts = styled.span`
 
-//   width: 150px;
-//   padding: 3px 10px;
-//   border-radius: 40px;
-//   font-size: 20px;
-//   font-family: Arial, Helvetica, sans-serif;
-//   font-weight: 600;
-//   text-decoration: none;
-//   color: blue;
-//   margin: 10px;
+  width: 150px;
+  padding: 3px 10px;
+  // border-radius: 40px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: blue;
+  margin: 10px;
 
-//   &:hover,
-//   &:focus {
-//      text-decoration: underline;
-//      color: white;
-// };
+  &:hover,
+  &:focus {
+     text-decoration: underline;
+     color: white;
+     text-decoration: none;
+};
 
 `;
+
+
+export const ButtonCont = styled.button`
+
+  width: 250px;
+  height: 40px;
+  cursor: pointer;
+  margin: 5px 10px 15px;
+  border-radius: 5px;
+  color:  #ffffff;
+  background-color: transparent;
+  border: 3px solid  #ffffff;
+  transition: all 0.5s ease;
+  padding: 12;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px blue;
+  
+
+  &:hover {
+    border: 3px solid  blue;
+     color: blue;
+     text-shadow: 2px 2px 4px #5ac8fa;
+     text-decoration: none;
+     
+  }
+
+`;
+
+
 
